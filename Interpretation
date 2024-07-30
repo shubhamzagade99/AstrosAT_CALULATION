@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+
+# Plot the periodogram
+plt.plot(1/frequency, periodogram)
+plt.xlabel('Period (seconds)')
+plt.ylabel('Power')
+plt.title('Lomb-Scargle Periodogram')
+plt.show()
+
+# Cross-check the rotation period with known values
