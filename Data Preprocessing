@@ -1,0 +1,9 @@
+time = data['TIME']  # Adjust the column name according to your data
+intensity = data['COUNTS']  # Adjust the column name according to your data
+
+# Normalize the intensity
+normalized_intensity = (intensity - np.mean(intensity)) / np.std(intensity)
+
+# Optional: Apply a filter to remove high-frequency noise
+from scipy.signal import savgol_filter
+filtered_intensity = savgol_filter(normalized_intensity, window_length=101, polyorder=3)
