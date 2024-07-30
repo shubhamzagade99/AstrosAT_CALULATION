@@ -1,0 +1,8 @@
+from astropy.io import fits
+import numpy as np
+
+# Example of loading a FITS file
+file_path = 'path_to_your_data_file.fits'
+hdul = fits.open(file_path)
+data = hdul[1].data  # Assuming data is in the second HDU
+hdul.close()
