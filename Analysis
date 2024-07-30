@@ -1,0 +1,13 @@
+from scipy.signal import lombscargle
+
+# Define the frequency range for the periodogram
+frequency = np.linspace(0.01, 10, 10000)  # Adjust the range as necessary
+
+# Compute the Lomb-Scargle periodogram
+periodogram = lombscargle(time, filtered_intensity, frequency)
+
+# Find the frequency with the highest power
+best_frequency = frequency[np.argmax(periodogram)]
+rotation_period = 1 / best_frequency
+
+print(f'Estimated Rotation Period: {rotation_period} seconds')
